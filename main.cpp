@@ -61,7 +61,7 @@ int main(){
     skyBox.setPosition(0, 0);
 
     sf::RectangleShape bottomLeft;
-    bottomLeft.setSize(sf::Vector2f (window.getSize().x/4, window.getSize().y/4));
+    bottomLeft.setSize(sf::Vector2f (window.getSize().x/5, window.getSize().y/4));
     bottomLeft.setFillColor(sf::Color(0, 255, 0, 150));
     bottomLeft.setPosition(0, (window.getSize().y/4) * 3);
 
@@ -86,7 +86,7 @@ int main(){
     CoffeeDoor.setPosition((window.getSize().x /16) * 5.8,(window.getSize().y/10) * 3.3);
 
     sf::RectangleShape NightClubWindow;
-    NightClubWindow.setSize(sf::Vector2f(window.getSize().x/12, window.getSize().y /10));
+    NightClubWindow.setSize(sf::Vector2f(window.getSize().x/11, window.getSize().y /10));
     NightClubWindow.setFillColor(sf::Color(255, 0, 255, 150));
     NightClubWindow.setPosition((window.getSize().x / 12) * 6, (window.getSize().y /10) * 3.3);
 
@@ -95,6 +95,27 @@ int main(){
     giftShop.setFillColor(sf::Color(255, 0, 255, 150));
     giftShop.setPosition((window.getSize().x / 12) * 7.6, (window.getSize().y /10)* 3.3);
 
+    sf::RectangleShape snowRight;
+    snowRight.setSize(sf::Vector2f(window.getSize().x / 16, window.getSize().y / 19));
+    snowRight.setFillColor(sf::Color(0, 234, 255, 150));
+    snowRight.setPosition((window.getSize().x / 10) * 7.3, (window.getSize().y) - snowRight.getSize().y);
+
+    sf::RectangleShape snowLeft;
+    snowLeft.setSize(sf::Vector2f(window.getSize().x / 14, window.getSize().y / 10));
+    snowLeft.setFillColor(sf::Color(0, 234, 255, 150));
+    snowLeft.setPosition((window.getSize().x / 5) , ((window.getSize().y) - snowLeft.getSize().y));
+
+
+    sf::RectangleShape treeLeft;
+    treeLeft.setSize(sf::Vector2f(window.getSize().x / 7, window.getSize().y / 4));
+    treeLeft.setFillColor(sf::Color(12, 45, 255, 150));
+    treeLeft.setPosition(0 , ((window.getSize().y / 6) * 3));
+
+    sf::RectangleShape treeRight;
+    treeRight.setSize(sf::Vector2f(window.getSize().x / 7, window.getSize().y / 3));
+    treeRight.setFillColor(sf::Color(12, 45, 255, 150));
+    treeRight.setPosition((window.getSize().x) - treeRight.getSize().x , ((window.getSize().y / 6) * 3));
+
     penguin.setScale(2, 2);
     setBG(&backgroundSprite, &background);
     penguin.setTexture(*penguinTextures[0]);
@@ -102,10 +123,10 @@ int main(){
     penguin.setRotation(0);
     penguin.setOrigin(penguin.getLocalBounds().width/2, penguin.getLocalBounds().height/2);
     while(window.isOpen()){
-        std::vector<sf::Drawable*> sceneObjects = {&backgroundSprite, &penguin,/* &skyBox, &bottomLeft, &bottomRight, &topRight, &topLeft, &CoffeeDoor, &NightClubWindow, &giftShop*/};
-        std::vector<sf::Drawable*> staticSceneObj = {&backgroundSprite, &skyBox, &bottomLeft, &bottomRight, &topRight, &topLeft, &CoffeeDoor, &NightClubWindow, &giftShop};
+        std::vector<sf::Drawable*> sceneObjects = {&backgroundSprite, &penguin, /*&skyBox, &bottomLeft, &bottomRight, &topRight, &topLeft, &CoffeeDoor, &NightClubWindow, &giftShop, &snowRight, &snowLeft, &treeLeft, &treeRight*/};
+        std::vector<sf::Drawable*> staticSceneObj = {&backgroundSprite, &skyBox, &bottomLeft, &bottomRight, &topRight, &topLeft, &CoffeeDoor, &NightClubWindow, &giftShop, &snowRight, &snowLeft, &treeLeft, &treeRight};
         std::vector<sf::Drawable*> dynamicSceneObj = {&penguin};
-        std::vector<sf::RectangleShape*> colliders = {&skyBox, &bottomLeft, &bottomRight, &topRight, &topLeft, &CoffeeDoor, &NightClubWindow};
+        std::vector<sf::RectangleShape*> colliders = {&skyBox, &bottomLeft, &bottomRight, &topRight, &topLeft, &CoffeeDoor, &NightClubWindow, &snowRight, &snowLeft, &treeLeft, &treeRight};
         //Aca adentro va lo que quiero dibujar
         //std::thread staticScene(drawScene, sceneObjects, &window);
         //staticScene.join();
