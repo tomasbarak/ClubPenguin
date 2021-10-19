@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/barak/CLionProjects/ClubPenguin/functions.h
+SFML/Graphics.hpp
+-
+SFML/System.hpp
+-
+iostream
+-
+thread
+-
+
+/home/barak/CLionProjects/ClubPenguin/main.cpp
+SFML/Graphics.hpp
+-
+SFML/System.hpp
+-
+iostream
+-
+thread
+-
+functions.h
+/home/barak/CLionProjects/ClubPenguin/functions.h
+
